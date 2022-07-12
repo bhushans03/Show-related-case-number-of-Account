@@ -1,0 +1,19 @@
+<template>
+    <template if:true={gotRecordId}>
+    <lightning-card title="Related Case Numbers">
+        <div class="slds-var-m-around_medium">
+            <div class="slds-box slds-theme_default">
+                <template iterator:item={cases} >
+                <!-- <div key ={item.id}>{item.CaseNumber}</div> -->
+                <ul key={item.value.id} class="slds-has-dividers_around-space">
+                    <li class="slds-item">{item.value.CaseNumber}</li>
+                </ul>
+            </template>
+            </div>
+        </div>
+    </lightning-card>
+</template>
+    <div class="slds-var-m-bottom_medium"></div>
+    <c-child-parent onfetch={fetchhandler}>
+    </c-child-parent>
+</template>
